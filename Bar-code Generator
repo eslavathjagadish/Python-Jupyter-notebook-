@@ -1,0 +1,8 @@
+!pip install python-barcode
+from barcode import EAN13
+from barcode.writer import ImageWriter
+def generate_barcode(num):
+    my_code=EAN13(num,writer=ImageWriter())
+    my_code.save('bar-code1')
+if __name__=='__main__':
+    generate_barcode(input('enter 12digit Number to generate Bar Code:'))
